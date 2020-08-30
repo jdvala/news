@@ -21,11 +21,11 @@ def main():
     logger.info("Data ready to be pushed")
     start_time = time.time()
     # remove the old data populated int the database
-    scheduler.scheduled_delete(firebase.kvell_database())
+    scheduler.scheduled_delete(firebase.pos_tod_db())
     logger.info("Data deleted")
     
     # populate the database
-    scheduler.scheduled_push(firebase.kvell_database(), data_for_push)
+    scheduler.scheduled_push(firebase.pos_tod_db(), data_for_push)
     logger.info("Data pushed")
     print("--- %s seconds ---" % (time.time() - start_time))
 if __name__ == "__main__":
