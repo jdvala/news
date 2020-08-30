@@ -11,6 +11,6 @@ class FirebaseDB:
         }
         self.firebase = pyrebase.initialize_app(self.config)
     
-    def pos_tod_db(self):
+    def kvell_database(self):
         self.kvell_db = self.firebase.database()
         return self.kvell_db
